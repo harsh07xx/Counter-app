@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Counter</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+<div id="glow"></div>
+
+<div class="card" id="card">
+  <!-- Header -->
+  <div class="header">
+    <div class="label">Counter</div>
+    <div class="session-badge" id="session-badge">Session 0:00</div>
+  </div>
+
+  <!-- Display -->
+  <div class="display-wrap">
+    <div class="display zero" id="display">0</div>
+    <div class="delta" id="delta"></div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="stat">
+      <span class="stat-val" id="stat-total">0</span>
+      <span class="stat-key">Total Taps</span>
+    </div>
+    <div class="stat">
+      <span class="stat-val" id="stat-max">0</span>
+      <span class="stat-key">High</span>
+    </div>
+    <div class="stat">
+      <span class="stat-val" id="stat-min">0</span>
+      <span class="stat-key">Low</span>
+    </div>
+    <div class="stat">
+      <span class="stat-val" id="stat-avg">0</span>
+      <span class="stat-key">Avg</span>
+    </div>
+  </div>
+
+  <!-- Goal progress -->
+  <div class="goal-row">
+    <span class="goal-label">Goal</span>
+    <span class="goal-pct" id="goal-pct">—</span>
+  </div>
+  <div class="progress-track">
+    <div class="progress-bar" id="progress-bar"></div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Step -->
+  <div class="step-row">
+    <span class="step-label">Step</span>
+    <div class="step-pills" id="step-pills">
+      <button class="step-pill active" data-step="1">×1</button>
+      <button class="step-pill" data-step="5">×5</button>
+      <button class="step-pill" data-step="10">×10</button>
+      <button class="step-pill" data-step="50">×50</button>
+    </div>
+  </div>
+
+  <!-- Main buttons -->
+  <div class="controls">
+    <button class="btn-dec" id="dec" aria-label="Decrement">−</button>
+    <button class="btn-inc" id="inc" aria-label="Increment">+</button>
+  </div>
+
+  <!-- Secondary -->
+  <div class="secondary">
+    <button class="btn-undo" id="undo">↩ Undo</button>
+    <button class="btn-set-goal" id="open-goal">⊙ Set Goal</button>
+    <button class="btn-reset" id="reset">Reset</button>
+  </div>
+
+  <!-- History dots -->
+  <div class="history" id="history" aria-live="polite"></div>
+
+  <div class="kbd-hint">↑ + to inc &nbsp;·&nbsp; ↓ − to dec &nbsp;·&nbsp; Z to undo &nbsp;·&nbsp; R to reset</div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<!-- Goal Modal -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <h3>Set a Goal</h3>
+    <p>We'll track progress and celebrate when you hit it.</p>
+    <input type="number" id="goal-input" placeholder="e.g. 100" />
+    <div class="modal-btns">
+      <button id="close-modal">Cancel</button>
+      <button class="btn-confirm" id="confirm-goal">Set Goal</button>
+    </div>
+  </div>
+</div>
+
+<script src="counter.js"></script>
+</body>
+</html>
