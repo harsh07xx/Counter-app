@@ -64,14 +64,6 @@ counter-app/
 └── .gitignore
 ```
 
-## Deployment
-
-This repo auto-deploys `index.html` to **GitHub Pages** on every push to `main` via the workflow in [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml).
-
-To enable it after pushing:
-1. Go to **Settings → Pages**
-2. Under "Build and deployment", set **Source** to **GitHub Actions**
-3. Push to `main` — the site will publish automatically at `https://<your-username>.github.io/counter-app/`
 
 ## Contributing
 
